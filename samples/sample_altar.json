@@ -1,0 +1,142 @@
+{
+  "id": "altar_familia_perez",
+  "title": "Ofrenda de la Familia Pérez (Memoria Viva)",
+  "family_name": "Familia Pérez",
+  "dedication_text": "Para nuestra querida Abuela Elena y Abuelo Arturo, cuya risa y enseñanzas siguen guiando cada paso de nuestras vidas.",
+  "created_at": "2026-10-28T20:00:00Z",
+  "candles_lit": true,
+  "cempasuchil_path_active": true,
+  "ancestors": [
+    {
+      "id": "anc_abuela_elena",
+      "name": "Elena Morales de Pérez",
+      "relationship": "Abuela Querida",
+      "birth_year": 1938,
+      "passing_year": 2021,
+      "bio": "Matriarca amorosa, maestra de cocina tradicional, jardinera incansable y defensora de la unión familiar. Pasó más de 50 años cocinando los mejores tamales y mole poblano para todo el vecindario.",
+      "favorite_foods": [
+        "Mole Poblano con arroz rojo",
+        "Pan de muerto artesanal con ajonjolí",
+        "Chocolate caliente batido en molinillo"
+      ],
+      "favorite_songs": [
+        "Cielito Lindo",
+        "Amor Eterno por Rocío Dúrcal",
+        "La Llorona"
+      ],
+      "sayings_and_advice": [
+        "Donde come uno, comen dos, y donde hay amor siempre sobra un plato.",
+        "El amor y el café son mejores calientes y sin prisa.",
+        "No te preocupes por lo que no puedes cambiar hoy; mañana Dios dirá y saldrá el sol."
+      ],
+      "photo_url": "",
+      "memories": [
+        {
+          "id": "mem_01",
+          "title": "Las mañanas de tamales en Navidad",
+          "story": "Abuela se levantaba a las 4 AM con la radio sintonizada en música ranchera. El vapor de la canela y las hojas de maíz envolvían toda la casa de un calor inquebrantable.",
+          "era_or_year": "1995-2015",
+          "tags": ["navidad", "cocina", "amor"]
+        }
+      ]
+    },
+    {
+      "id": "anc_abuelo_arturo",
+      "name": "Arturo Pérez Rosas",
+      "relationship": "Abuelo Sabio",
+      "birth_year": 1934,
+      "passing_year": 2018,
+      "bio": "Ingeniero mecánico autodidacta, carpintero aficionado y aficionado a la radio de onda corta. Construyó con sus propias manos la mesa del comedor donde toda la familia se reunía los domingos.",
+      "favorite_foods": [
+        "Café de olla con piloncillo y clavo",
+        "Enchiladas verdes con queso fresco",
+        "Dulce de calabaza en tacha"
+      ],
+      "favorite_songs": [
+        "Bésame Mucho",
+        "El Rey de José Alfredo Jiménez"
+      ],
+      "sayings_and_advice": [
+        "Mide dos veces y corta una sola vez.",
+        "La palabra de una persona honrada vale más que cualquier firma en papel.",
+        "Si vas a hacer algo, hazlo bien hecho o mejor ponte a leer un libro."
+      ],
+      "photo_url": "",
+      "memories": [
+        {
+          "id": "mem_02",
+          "title": "El taller de carpintería del patio trasero",
+          "story": "El abuelo nos enseñaba a lijar madera y a escuchar el zumbido de las abejas en el naranjo mientras nos contaba historias de su primer taller en Guadalajara.",
+          "era_or_year": "2002",
+          "tags": ["carpinteria", "consejos", "taller"]
+        }
+      ]
+    }
+  ],
+  "offerings": [
+    {
+      "id": "off_01",
+      "name": "Velas Misioneras Benditas",
+      "category": "candle",
+      "tier": "cielo",
+      "description": "Llama perpetua que simboliza la esperanza y fe, guiando las ánimas de regreso al calor del hogar.",
+      "icon": "🕯️"
+    },
+    {
+      "id": "off_02",
+      "name": "Sahumerio con Incienso de Copal",
+      "category": "incense",
+      "tier": "cielo",
+      "description": "Resina sagrada de copal prehispánico para limpiar las malas energías y perfumar la estancia.",
+      "icon": "💨"
+    },
+    {
+      "id": "off_03",
+      "name": "Pan de Muerto de Azúcar y Mantequilla",
+      "category": "food",
+      "tier": "tierra",
+      "description": "Pan ceremonial con sus cuatro canillas de huesitos y aroma a azahar y naranja.",
+      "icon": "🍞"
+    },
+    {
+      "id": "off_04",
+      "name": "Cazuela de Mole Poblano de la Abuela",
+      "category": "food",
+      "tier": "tierra",
+      "description": "El platillo predilecto de Elena, preparado con chiles secos, chocolate amargo y ajonjolí tostado.",
+      "icon": "🍲"
+    },
+    {
+      "id": "off_05",
+      "name": "Jarro de Café de Olla con Canela",
+      "category": "drink",
+      "tier": "tierra",
+      "description": "El café aromático que el abuelo Arturo tomaba al amanecer en su taza de peltre azul.",
+      "icon": "☕"
+    },
+    {
+      "id": "off_06",
+      "name": "Camino Sagrado de Pétalos de Cempasúchil",
+      "category": "cempasuchil",
+      "tier": "inframundo",
+      "description": "Alfombra dorada de flores de cempasúchil trazada desde la puerta hasta el altar para marcar el camino.",
+      "icon": "🌼"
+    },
+    {
+      "id": "off_07",
+      "name": "Vaso de Agua de Manantial",
+      "category": "water",
+      "tier": "inframundo",
+      "description": "Mitiga la sed del espíritu tras el largo y misterioso viaje desde el Mictlán.",
+      "icon": "💧"
+    },
+    {
+      "id": "off_08",
+      "name": "Cruz de Sal Blanca Purificadora",
+      "category": "salt",
+      "tier": "inframundo",
+      "description": "Sal consagrada en cruz para proteger y mantener pura el alma del difunto durante su visita.",
+      "icon": "🧂"
+    }
+  ]
+}

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ofrenda AI 🏵️🕯️ — Living Sanctuary & Ancestral Memory Vault</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="petalsCanvas"></canvas>
+
+    <header class="sanctuary-header">
+        <div class="papel-picado">
+            <span>✨</span><span>🏵️</span><span>🕯️</span><span>💀</span><span>🏵️</span><span>✨</span>
+        </div>
+        <div class="header-content">
+            <h1 class="glow-title">Ofrenda AI <span class="alt-symbol">🏵️🕯️</span></h1>
+            <p class="subtitle">A Local-First Día de los Muertos Sanctuary & Living Memory Vault</p>
+            <div class="ai-badge-row">
+                <span class="badge" id="aiStatusBadge">Checking AI Engine...</span>
+                <span class="badge privacy-badge">🔒 100% On-Device • Air-Gapped Privacy</span>
+                <span class="badge model-badge">Powered by Google Gemma 2</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="sanctuary-main">
+        <!-- Navigation Tabs -->
+        <nav class="sanctuary-nav">
+            <button class="nav-tab active" data-tab="altar">🏵️ El Altar Sagrado</button>
+            <button class="nav-tab" data-tab="oracle">🕯️ Consulta Ancestral (Séance)</button>
+            <button class="nav-tab" data-tab="calaveritas">💀 Calaveritas Literarias</button>
+            <button class="nav-tab" data-tab="remembrance">📜 Memoria y Elogio</button>
+            <button class="nav-tab" data-tab="vault">🗝️ Bóveda de Ancestros</button>
+        </nav>
+
+        <!-- Tab 1: El Altar Sagrado -->
+        <section id="tab-altar" class="tab-pane active">
+            <div class="altar-hero">
+                <div class="altar-controls">
+                    <h2 id="altarTitle">Ofrenda de la Familia</h2>
+                    <p id="altarDedication" class="altar-dedication">Cargando altar...</p>
+                    <div class="action-buttons">
+                        <button id="toggleCandlesBtn" class="btn btn-secondary">🕯️ Apagar/Encender Velas</button>
+                        <button id="exportHtmlBtn" class="btn btn-primary">📦 Exportar Memorial Autónomo (HTML)</button>
+                    </div>
+                </div>
+
+                <!-- 3-Tier Visual Altar Display -->
+                <div class="altar-display-pyramid" id="pyramidDisplay">
+                    <!-- Tier 1: Cielo (Top) -->
+                    <div class="altar-tier tier-cielo">
+                        <div class="tier-label">1. Cielo (Espíritu, Luz y Guía)</div>
+                        <div class="tier-ancestor-photos" id="cieloAncestors">
+                            <!-- Injected by JS -->
+                        </div>
+                        <div class="tier-items" id="cieloItems">
+                            <!-- Injected by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Tier 2: Tierra (Middle) -->
+                    <div class="altar-tier tier-tierra">
+                        <div class="tier-label">2. Tierra (Comida, Música y Placeres Terrenales)</div>
+                        <div class="tier-items" id="tierraItems">
+                            <!-- Injected by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Tier 3: Inframundo (Base) -->
+                    <div class="altar-tier tier-inframundo">
+                        <div class="tier-label">3. Inframundo (Purificación, Agua y Flores de Cempasúchil)</div>
+                        <div class="tier-items" id="inframundoItems">
+                            <!-- Injected by JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab 2: Consulta Ancestral (Séance) -->
+        <section id="tab-oracle" class="tab-pane">
+            <div class="glass-card oracle-card">
+                <div class="card-header">
+                    <h2>🕯️ Consulta a tus Ancestros (Living Memory Oracle)</h2>
+                    <p>Habla con la memoria y sabiduría de tus seres queridos. Sus respuestas se generan con <strong>Gemma 2</strong>, basadas exclusivamente en sus consejos, refranes y recuerdos de vida registrados.</p>
+                </div>
+                
+                <div class="form-group">
+                    <label for="oracleAncestorSelect">Selecciona al Ancestro:</label>
+                    <select id="oracleAncestorSelect" class="form-input"></select>
+                </div>
+
+                <div class="form-group">
+                    <label for="oracleQuestionInput">¿Qué consejo o pregunta deseas hacerle?</label>
+                    <input type="text" id="oracleQuestionInput" class="form-input" placeholder="Ej: ¿Cómo debo tomar una decisión difícil en mi vida?">
+                </div>
+
+                <button id="askAncestorBtn" class="btn btn-primary">🕊️ Invocar Sabiduría del Ancestro</button>
+
+                <div class="oracle-response-area" id="oracleResponseArea" style="display: none;">
+                    <div class="oracle-avatar">🕯️</div>
+                    <div class="oracle-text-bubble">
+                        <h4 id="oracleSpeakerName">Abuela Elena</h4>
+                        <div id="oracleMessageText" class="oracle-body"></div>
+                        <span class="engine-tag" id="oracleEngineTag"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab 3: Calaveritas Literarias -->
+        <section id="tab-calaveritas" class="tab-pane">
+            <div class="glass-card">
+                <div class="card-header">
+                    <h2>💀 Calaveritas Literarias Tradicionales</h2>
+                    <p>Genera rimas poéticas tradicionales para honrar y celebrar la vida con humor, picardía y afecto. La Catrina visita al ancestro y sucumbe ante su platillo favorito o sabiduría.</p>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group flex-1">
+                        <label for="calaveritaAncestorSelect">Selecciona el Ancestro a Honrar:</label>
+                        <select id="calaveritaAncestorSelect" class="form-input"></select>
+                    </div>
+                    <div class="form-group flex-1">
+                        <label for="calaveritaLangSelect">Idioma / Formato:</label>
+                        <select id="calaveritaLangSelect" class="form-input">
+                            <option value="spanish">Español Tradicional</option>
+                            <option value="bilingual">Bilingüe (Español / English)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button id="generateCalaveritaBtn" class="btn btn-primary">✨ Componer Calaverita con Gemma 2</button>
+
+                <div class="poetry-display-card" id="calaveritaDisplayArea" style="display: none;">
+                    <div class="calaverita-header">
+                        <span class="skull-deco">💀</span>
+                        <h3 id="calaveritaTitle">Calaverita a Nuestros Seres Queridos</h3>
+                        <span class="skull-deco">💀</span>
+                    </div>
+                    <div id="calaveritaVerses" class="verses-content"></div>
+                    <div class="engine-meta" id="calaveritaMeta"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab 4: Memoria y Elogio -->
+        <section id="tab-remembrance" class="tab-pane">
+            <div class="glass-card">
+                <div class="card-header">
+                    <h2>📜 Elogio y Memoria Viva</h2>
+                    <p>Sintetiza una hermosa pieza conmemorativa para leer frente al altar familiar en la víspera de Día de los Muertos.</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="remembranceAncestorSelect">Selecciona al Ancestro:</label>
+                    <select id="remembranceAncestorSelect" class="form-input"></select>
+                </div>
+
+                <button id="generateRemembranceBtn" class="btn btn-primary">🏵️ Escribir Elogio Conmemorativo</button>
+
+                <div class="remembrance-display-area" id="remembranceDisplayArea" style="display: none;">
+                    <div id="remembranceText" class="remembrance-text"></div>
+                    <div class="engine-meta" id="remembranceMeta"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab 5: Bóveda de Ancestros -->
+        <section id="tab-vault" class="tab-pane">
+            <div class="glass-card">
+                <div class="card-header">
+                    <h2>🗝️ Bóveda de Ancestros y Registro de Sabiduría</h2>
+                    <p>Agrega familiares, recetas, refranes y anécdotas orales. Todo se guarda localmente en tu máquina con 100% de privacidad soberana.</p>
+                </div>
+
+                <form id="addAncestorForm" class="add-form">
+                    <div class="form-row">
+                        <div class="form-group flex-2">
+                            <label for="ancestorName">Nombre Completo:</label>
+                            <input type="text" id="ancestorName" class="form-input" required placeholder="Ej: Elena Morales de Pérez">
+                        </div>
+                        <div class="form-group flex-1">
+                            <label for="ancestorRelationship">Parentesco:</label>
+                            <input type="text" id="ancestorRelationship" class="form-input" required placeholder="Ej: Abuela, Tío, Mamá">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group flex-1">
+                            <label for="ancestorBirthYear">Año de Nacimiento:</label>
+                            <input type="number" id="ancestorBirthYear" class="form-input" placeholder="1938">
+                        </div>
+                        <div class="form-group flex-1">
+                            <label for="ancestorPassingYear">Año de Partida:</label>
+                            <input type="number" id="ancestorPassingYear" class="form-input" placeholder="2021">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ancestorBio">Semblanza y Personalidad:</label>
+                        <textarea id="ancestorBio" class="form-input" rows="3" placeholder="Describe quién era, su oficio, sus pasiones y lo que más caracterizaba su corazón."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ancestorFoods">Comidas y Bebidas Favoritas (separadas por coma):</label>
+                        <input type="text" id="ancestorFoods" class="form-input" placeholder="Mole poblano, Pan de muerto, Café de olla">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ancestorSayings">Refranes, Consejos y Frases Famosas (separadas por coma):</label>
+                        <input type="text" id="ancestorSayings" class="form-input" placeholder="Donde come uno comen dos; Mide dos veces y corta una">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ancestorSongs">Música o Canciones Predilectas (separadas por coma):</label>
+                        <input type="text" id="ancestorSongs" class="form-input" placeholder="Cielito Lindo, Amor Eterno, Bésame Mucho">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">💾 Guardar Ancestro y Generar Ofrendas en el Altar</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="sanctuary-footer">
+        <p>Ofrenda AI 🏵️🕯️ • Hacktoberfest 2026 Open-Source AI Challenge: Week 4 ("Ghost in the Machine")</p>
+        <p class="subfooter">Built with Google Gemma 2 • 100% On-Device Air-Gapped Memorial Sanctuary • Permissive MIT License</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

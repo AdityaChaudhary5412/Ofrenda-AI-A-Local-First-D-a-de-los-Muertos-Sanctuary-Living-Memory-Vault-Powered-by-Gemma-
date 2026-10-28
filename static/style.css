@@ -1,0 +1,569 @@
+/* Ofrenda AI - Día de los Muertos Aesthetic Stylesheet */
+
+:root {
+    --bg-dark: #0d0a14;
+    --card-bg: rgba(24, 18, 36, 0.75);
+    --card-border: rgba(245, 183, 38, 0.25);
+    --gold: #f5b726;
+    --gold-glow: rgba(245, 183, 38, 0.5);
+    --cempasuchil: #ff7700;
+    --marigold: #ffa726;
+    --pink: #e97b77;
+    --violet: #845ec2;
+    --text-primary: #f5f2eb;
+    --text-muted: #a79fb7;
+    --flame-outer: #ff5722;
+    --flame-inner: #ffeb3b;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: radial-gradient(circle at 50% 15%, #241639 0%, var(--bg-dark) 100%);
+    color: var(--text-primary);
+    font-family: 'Inter', -apple-system, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Floating Cempasúchil Petals Canvas */
+#petalsCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Header & Papel Picado */
+.sanctuary-header {
+    text-align: center;
+    padding: 40px 20px 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.papel-picado {
+    font-size: 24px;
+    letter-spacing: 12px;
+    margin-bottom: 12px;
+    filter: drop-shadow(0 0 8px rgba(245, 183, 38, 0.6));
+    animation: sway 4s ease-in-out infinite alternate;
+}
+
+@keyframes sway {
+    0% { transform: translateY(0px) rotate(-1deg); }
+    100% { transform: translateY(-4px) rotate(1deg); }
+}
+
+.glow-title {
+    font-family: 'Cinzel', serif;
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: var(--gold);
+    text-shadow: 0 0 20px var(--gold-glow), 0 0 40px rgba(255, 119, 0, 0.3);
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    color: var(--pink);
+    font-style: italic;
+    margin-bottom: 18px;
+}
+
+.ai-badge-row {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.badge {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--text-muted);
+}
+
+.privacy-badge {
+    border-color: rgba(76, 175, 80, 0.4);
+    color: #81c784;
+}
+
+.model-badge {
+    border-color: rgba(245, 183, 38, 0.4);
+    color: var(--gold);
+}
+
+/* Navigation Tabs */
+.sanctuary-nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 20px;
+    background: rgba(13, 10, 20, 0.85);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 1px solid var(--card-border);
+    flex-wrap: wrap;
+}
+
+.nav-tab {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-muted);
+    padding: 10px 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.25s ease;
+}
+
+.nav-tab:hover {
+    background: rgba(245, 183, 38, 0.1);
+    color: var(--gold);
+    border-color: var(--gold);
+}
+
+.nav-tab.active {
+    background: var(--gold);
+    color: #120d1c;
+    border-color: var(--gold);
+    box-shadow: 0 0 15px var(--gold-glow);
+}
+
+/* Main Container */
+.sanctuary-main {
+    max-width: 1050px;
+    margin: 30px auto;
+    padding: 0 20px 60px;
+    position: relative;
+    z-index: 2;
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+    animation: fadeIn 0.35s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Glass Card */
+.glass-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 18px;
+    padding: 30px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    margin-bottom: 25px;
+}
+
+.card-header h2 {
+    font-family: 'Cinzel', serif;
+    color: var(--gold);
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+}
+
+.card-header p {
+    color: var(--text-muted);
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+/* 3-Tier Visual Altar Display */
+.altar-hero {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    padding: 35px 25px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+}
+
+.altar-controls {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.altar-controls h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    color: var(--gold);
+    margin-bottom: 6px;
+}
+
+.altar-dedication {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--pink);
+    max-width: 650px;
+    margin: 0 auto 20px;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Altar Pyramid Tiers */
+.altar-display-pyramid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.altar-tier {
+    width: 100%;
+    border-radius: 14px;
+    padding: 22px;
+    background: rgba(18, 13, 26, 0.85);
+    border: 1px solid rgba(245, 183, 38, 0.2);
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.6);
+    text-align: center;
+}
+
+.tier-cielo {
+    max-width: 580px;
+    border-top: 3px solid var(--gold);
+    box-shadow: 0 -4px 25px rgba(245, 183, 38, 0.35);
+}
+
+.tier-tierra {
+    max-width: 780px;
+    border-top: 3px solid var(--cempasuchil);
+    box-shadow: 0 -3px 20px rgba(255, 119, 0, 0.25);
+}
+
+.tier-inframundo {
+    max-width: 950px;
+    border-top: 3px solid var(--violet);
+    box-shadow: 0 -3px 20px rgba(132, 94, 194, 0.25);
+}
+
+.tier-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--gold);
+    margin-bottom: 16px;
+    opacity: 0.9;
+}
+
+.tier-ancestor-photos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.ancestor-portrait-badge {
+    background: rgba(36, 26, 52, 0.9);
+    border: 2px solid var(--gold);
+    border-radius: 12px;
+    padding: 12px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 15px rgba(245, 183, 38, 0.4);
+    min-width: 160px;
+}
+
+.portrait-frame {
+    font-size: 32px;
+    margin-bottom: 6px;
+    position: relative;
+}
+
+.candle-glow {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    font-size: 14px;
+    animation: flicker 1.8s infinite alternate;
+}
+
+@keyframes flicker {
+    0% { opacity: 0.6; transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1.1); filter: drop-shadow(0 0 6px #ffeb3b); }
+}
+
+.ancestor-portrait-badge h4 {
+    font-size: 1rem;
+    color: var(--text-primary);
+    margin-bottom: 2px;
+}
+
+.ancestor-portrait-badge span {
+    font-size: 0.8rem;
+    color: var(--marigold);
+}
+
+.tier-items {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.offering-chip {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(245, 183, 38, 0.2);
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 0.88rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+}
+
+.offering-chip:hover {
+    background: rgba(245, 183, 38, 0.15);
+    border-color: var(--gold);
+    transform: translateY(-2px);
+}
+
+/* Forms & Inputs */
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.flex-1 { flex: 1; }
+.flex-2 { flex: 2; }
+
+label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px 14px;
+    background: rgba(15, 12, 22, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    outline: none;
+    transition: border 0.2s ease;
+}
+
+.form-input:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 10px rgba(245, 183, 38, 0.3);
+}
+
+/* Buttons */
+.btn {
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--gold) 0%, var(--cempasuchil) 100%);
+    color: #120d1c;
+    box-shadow: 0 4px 15px rgba(245, 183, 38, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(245, 183, 38, 0.6);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-primary);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Oracle / Channeled Chat Bubble */
+.oracle-response-area {
+    margin-top: 25px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    animation: fadeIn 0.4s ease;
+}
+
+.oracle-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #231835;
+    border: 2px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    box-shadow: 0 0 15px var(--gold-glow);
+    flex-shrink: 0;
+}
+
+.oracle-text-bubble {
+    background: rgba(22, 16, 33, 0.9);
+    border: 1px solid rgba(245, 183, 38, 0.3);
+    border-left: 4px solid var(--gold);
+    border-radius: 12px;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.oracle-text-bubble h4 {
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+}
+
+.oracle-body {
+    line-height: 1.7;
+    white-space: pre-wrap;
+    font-size: 1rem;
+    color: #fff8ea;
+}
+
+.engine-tag {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 0.75rem;
+    color: var(--marigold);
+    opacity: 0.8;
+}
+
+/* Poetry / Calaveritas Display */
+.poetry-display-card {
+    margin-top: 25px;
+    background: rgba(18, 14, 26, 0.95);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 25px;
+    animation: fadeIn 0.4s ease;
+}
+
+.calaverita-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.calaverita-header h3 {
+    font-family: 'Cinzel', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+}
+
+.skull-deco {
+    font-size: 24px;
+}
+
+.verses-content {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #fff4d8;
+    white-space: pre-wrap;
+    padding: 15px;
+    background: rgba(245, 183, 38, 0.04);
+    border-radius: 8px;
+}
+
+.engine-meta {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 12px;
+    text-align: right;
+}
+
+/* Remembrance Display Area */
+.remembrance-display-area {
+    margin-top: 25px;
+    background: rgba(18, 14, 26, 0.95);
+    border-left: 4px solid var(--pink);
+    border-radius: 12px;
+    padding: 25px;
+    animation: fadeIn 0.4s ease;
+}
+
+.remembrance-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #fff;
+    white-space: pre-wrap;
+}
+
+/* Footer */
+.sanctuary-footer {
+    text-align: center;
+    padding: 30px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    position: relative;
+    z-index: 2;
+}
+
+.subfooter {
+    margin-top: 6px;
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+    .glow-title { font-size: 2.1rem; }
+    .form-row { flex-direction: column; gap: 0; }
+    .sanctuary-nav { gap: 6px; }
+    .nav-tab { font-size: 0.85rem; padding: 8px 12px; }
+}

@@ -1,0 +1,4 @@
+# Ofrenda AI has ZERO mandatory external dependencies!
+# Runs out-of-the-box on standard Python 3.9+.
+# Optional packages for development:
+# pytest>=7.0.0
