@@ -80,6 +80,8 @@ sequenceDiagram
 
 ## 📂 Repository Structure
 
+📁 **GitHub Repository:** [https://github.com/AdityaChaudhary5412/Ofrenda-AI-A-Local-First-D-a-de-los-Muertos-Sanctuary-Living-Memory-Vault-Powered-by-Gemma-](https://github.com/AdityaChaudhary5412/Ofrenda-AI-A-Local-First-D-a-de-los-Muertos-Sanctuary-Living-Memory-Vault-Powered-by-Gemma-)
+
 ```plaintext
 ofrenda-ai/
 ├── models.py              # Data models (Altar, Ancestor, Offering, Memory)
